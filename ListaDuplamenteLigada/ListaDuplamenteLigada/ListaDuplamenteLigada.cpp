@@ -178,7 +178,6 @@ void excluirUltimoElemento()
 	aux->ant->prox = NULL;
 	ultimo = aux->ant;
 
-
 	free(aux);
 }
 
