@@ -21,7 +21,7 @@ void inserirElemento();
 void excluirPrimeiroElemento();
 void excluirUltimoElemento();
 
-//--------------------------
+// --------------------------
 
 
 int main()
@@ -150,17 +150,36 @@ void inserirElemento()
 // funções a serem implementadas no exericio
 void exibirReverso()
 {
+	cout << "Elementos reverso: " << endl;
 
+	NO* aux = ultimo;
+
+	while (aux != NULL) {
+
+		cout << aux->valor << endl;
+		aux = aux->ant;
+	}
 }
 
 void excluirPrimeiroElemento()
 {
+	NO* aux = primeiro;
 
+	aux->prox->ant = NULL;
+	primeiro = aux->prox;
+
+	free(aux);
 }
 
 void excluirUltimoElemento()
 {
+	NO* aux = ultimo;
 
+	aux->ant->prox = NULL;
+	ultimo = aux->ant;
+
+
+	free(aux);
 }
 
 
